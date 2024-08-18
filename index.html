@@ -7,27 +7,42 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            background-color: #F6F6F6;
         }
         .container {
-            max-width: 360px; /* 限制容器宽度 */
-            margin: 0 auto;
-            background-color: #f8f8f8;
+            max-width: 100%;
+            background-color: #FFFFFF;
+        }
+        .header {
+            height: 48px;
+            background-color: #F6F6F6;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            font-size: 16px;
+            color: #333333;
+        }
+        .header .back-icon {
+            font-size: 24px;
+            color: #333333;
+            margin-right: 15px;
         }
         .title {
             font-size: 14px;
             color: #888888;
             padding: 10px 15px;
-            background-color: #f8f8f8;
+            background-color: #F6F6F6;
         }
         .menu-item {
-            background-color: white;
+            background-color: #FFFFFF;
             padding: 15px;
-            border-bottom: 1px solid #e6e6e6;
+            border-bottom: 1px solid #E6E6E6;
             font-size: 16px;
             color: #333333;
             text-decoration: none;
             display: block;
+            width: 100%;
+            box-sizing: border-box;
         }
         .menu-item:last-child {
             border-bottom: none;
@@ -36,25 +51,30 @@
             text-align: center;
             color: #666666;
             font-size: 12px;
-            margin-top: 20px;
-            padding-bottom: 20px;
+            padding: 15px;
+            background-color: #F6F6F6;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">请选择投诉该账号的原因：</div>
-        <a href="#" class="menu-item">发布不适当内容对我造成骚扰</a>
-        <a href="#" class="menu-item">存在欺诈骗钱行为</a>
-        <a href="#" class="menu-item">此账号可能被盗用了</a>
-        <a href="#" class="menu-item">存在侵权行为(侵犯知识产权、人身权)</a>
-        <a href="#" class="menu-item">发布仿冒品信息</a>
-        <a href="#" class="menu-item">冒充他人</a>
-        <a href="#" class="menu-item">侵犯未成年⼈权益</a>
-        <a href="#" class="menu-item">粉丝无底线追星行为</a>
-    </div>
-    <div class="footer">
-        投诉须知
+        <div class="header">
+            <div class="back-icon">×</div>
+            <div>请选择投诉该账号的原因：</div>
+        </div>
+        <div class="menu-list">
+            <a href="#" class="menu-item">发布不适当内容对我造成骚扰</a>
+            <a href="#" class="menu-item">存在欺诈骗钱行为</a>
+            <a href="#" class="menu-item">此账号可能被盗用了</a>
+            <a href="#" class="menu-item">存在侵权行为(侵犯知识产权、人身权)</a>
+            <a href="#" class="menu-item">发布仿冒品信息</a>
+            <a href="#" class="menu-item">冒充他人</a>
+            <a href="#" class="menu-item">侵犯未成年⼈权益</a>
+            <a href="#" class="menu-item">粉丝无底线追星行为</a>
+        </div>
+        <div class="footer">
+            投诉须知
+        </div>
     </div>
 </body>
 </html>
