@@ -41,46 +41,45 @@
             padding: 15px;
             background-color: #ededed;
         }
-        .hidden {
-            display: none;
-        }
     </style>
     <script>
-        function showMenu(menuId, title) {
-            // Hide all menus
-            var menus = document.querySelectorAll('.menu-list');
-            menus.forEach(function(menu) {
-                menu.classList.add('hidden');
-            });
+        function showSecondaryMenu(menuId) {
+            var menus = document.getElementsByClassName('menu-list');
+            for (var i = 0; i < menus.length; i++) {
+                menus[i].style.display = 'none';
+            }
+            document.getElementById(menuId).style.display = 'block';
+        }
 
-            // Show the selected menu
-            var selectedMenu = document.getElementById(menuId);
-            selectedMenu.classList.remove('hidden');
-
-            // Update the title-bar content
-            document.getElementById('title-bar').textContent = title;
+        function showMainMenu() {
+            var menus = document.getElementsByClassName('menu-list');
+            for (var i = 0; i < menus.length; i++) {
+                menus[i].style.display = 'none';
+            }
+            document.getElementById('mainMenu').style.display = 'block';
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <!-- 一级菜单 -->
-        <div class="title-bar" id="title-bar">
+        <div class="title-bar" id="titleBar">
             请选择投诉该账号的原因：
         </div>
-        <div class="menu-list" id="menu-main">
-            <a href="#" class="menu-item" onclick="showMenu('menu-harassment', '请选择哪一类违法内容：')">发布不适当内容对我造成骚扰</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-scam', '请选择哪一类诈骗内容：')">存在欺诈骗钱行为</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-hacked', '你可以：')">此账号可能被盗用了</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-infringement', '请选择哪一类侵权内容：')">存在侵权行为(侵犯知识产权、人身权)</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-counterfeit', '请选择哪一类仿冒品信息：')">发布仿冒品信息</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-impersonation', '请选择哪一类冒充行为：')">冒充他人</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-minors', '请选择哪一类侵犯未成年人权益：')">侵犯未成年⼈权益</a>
-            <a href="#" class="menu-item" onclick="showMenu('menu-fan-behavior', '请选择哪一类粉丝行为：')">粉丝无底线追星行为</a>
-        </div>
         
-        <!-- 二级菜单：发布不适当内容对我造成骚扰 -->
-        <div class="menu-list hidden" id="menu-harassment">
+        <!-- 一级菜单 -->
+        <div class="menu-list" id="mainMenu">
+            <a href="#" class="menu-item" onclick="document.getElementById('titleBar').innerHTML = '请选择哪一类违法内容：'; showSecondaryMenu('menu1')">发布不适当内容对我造成骚扰</a>
+            <a href="#" class="menu-item" onclick="document.getElementById('titleBar').innerHTML = '请选择哪一类诈骗内容：'; showSecondaryMenu('menu2')">存在欺诈骗钱行为</a>
+            <a href="#" class="menu-item" onclick="document.getElementById('titleBar').innerHTML = '你可以：'; showSecondaryMenu('menu3')">此账号可能被盗用了</a>
+            <a href="#" class="menu-item">存在侵权行为(侵犯知识产权、人身权)</a>
+            <a href="#" class="menu-item">发布仿冒品信息</a>
+            <a href="#" class="menu-item">冒充他人</a>
+            <a href="#" class="menu-item">侵犯未成年⼈权益</a>
+            <a href="#" class="menu-item">粉丝无底线追星行为</a>
+        </div>
+
+        <!-- 发布不适当内容对我造成骚扰 -->
+        <div class="menu-list" id="menu1" style="display: none;">
             <a href="#" class="menu-item">色情</a>
             <a href="#" class="menu-item">违法犯罪及违禁品</a>
             <a href="#" class="menu-item">赌博</a>
@@ -89,9 +88,9 @@
             <a href="#" class="menu-item">自杀自残</a>
             <a href="#" class="menu-item">其他违规内容</a>
         </div>
-        
-        <!-- 二级菜单：存在欺诈骗钱行为 -->
-        <div class="menu-list hidden" id="menu-scam">
+
+        <!-- 存在欺诈骗钱行为 -->
+        <div class="menu-list" id="menu2" style="display: none;">
             <a href="#" class="menu-item">金融诈骗</a>
             <a href="#" class="menu-item">网络兼职刷单诈骗</a>
             <a href="#" class="menu-item">返利诈骗</a>
@@ -104,12 +103,12 @@
             <a href="#" class="menu-item">游戏相关诈骗(代练/充值等)</a>
             <a href="#" class="menu-item">其他诈骗行为</a>
         </div>
-        
-        <!-- 二级菜单：此账号可能被盗用了 -->
-        <div class="menu-list hidden" id="menu-hacked">
+
+        <!-- 此账号可能被盗用了 -->
+        <div class="menu-list" id="menu3" style="display: none;">
             <a href="#" class="menu-item">提交给微信团队审核</a>
         </div>
-        
+
         <div class="footer">
             投诉须知
         </div>
