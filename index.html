@@ -10,8 +10,9 @@
   <!-- 引入 Vue 和 Vant 的 JS 文件 -->
   <script src="https://fastly.jsdelivr.net/npm/vue@3"></script>
   <script src="https://fastly.jsdelivr.net/npm/vant@4/lib/vant.min.js"></script>
-  <style >
-    
+  <title>投诉</title>
+  <style>
+
   </style>
   <style>
     body {
@@ -151,8 +152,8 @@
   </style>
   <script>
     window.menuId = 'menu-main'
-  window.addEventListener('popstate', function(event) {
-  // Hide all menus
+    window.addEventListener('popstate', function (event) {
+      // Hide all menus
       var menus = document.querySelectorAll('.menu-list');
       menus.forEach(function (menu) {
         menu.classList.add('hidden');
@@ -161,14 +162,14 @@
       var selectedMenu = document.getElementById(window.menuId);
       console.log(window.menuId)
       selectedMenu.classList.remove('hidden');
-     window.menuId = 'menu-main'
+      window.menuId = 'menu-main'
 
-});
-
-  
+    });
 
 
-    function showMenu (menuId, title,id) {
+
+
+    function showMenu (menuId, title, id) {
       // Hide all menus
       var menus = document.querySelectorAll('.menu-list');
       menus.forEach(function (menu) {
@@ -181,10 +182,10 @@
 
       let url = window.location.href + '#' + menuId
       history.pushState(null, null, url);
-      if(id){
+      if (id) {
         window.menuId = id
-      }else{
-         window.menuId = 'menu-main'
+      } else {
+        window.menuId = 'menu-main'
       }
       document.getElementById('title-bar').textContent = title;
     }
@@ -245,7 +246,9 @@
 
     <!-- 二级菜单：发布不适当内容对我造成骚扰 -->
     <div class="menu-list hidden" id="menu-harassment">
+      <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">色情</a>
       <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">违法犯罪及违禁品</a>
+      <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">赌博</a>
       <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">政治谣言</a>
       <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">暴恐血腥</a>
       <a class="menu-item" onclick="showMenu('upload','','menu-harassment')">自杀自残</a>
@@ -304,14 +307,14 @@
           <span id="remainingChars">0</span>/200
         </div>
       </div>
-     
+
       <div class="footer ">
         <button onclick="showSucess()">提交</button>
       </div>
     </div>
 
     <div class="footer">
-      
+      投诉须知
     </div>
   </div>
 
@@ -355,7 +358,7 @@
         };
 
         const _doUp = async (file) => {
-         return
+          return
         }
 
         const afterRead = async (files) => {
@@ -395,24 +398,24 @@
     // app.use(vant.Lazyload);
     app.mount('#app');
   </script>
-    <script>
-        // 获取 textarea 和 剩余字数显示元素
-        const textarea = document.getElementById('myTextarea');
-        const remainingCharsDisplay = document.getElementById('remainingChars');
+  <script>
+    // 获取 textarea 和 剩余字数显示元素
+    const textarea = document.getElementById('myTextarea');
+    const remainingCharsDisplay = document.getElementById('remainingChars');
 
-        // 定义最大字符数
-        const maxChars = textarea.getAttribute('maxlength');
+    // 定义最大字符数
+    const maxChars = textarea.getAttribute('maxlength');
 
-        // 添加输入事件监听
-        textarea.addEventListener('input', function () {
-          // 计算剩余字数
-          const remainingChars = textarea.value.length;
+    // 添加输入事件监听
+    textarea.addEventListener('input', function () {
+      // 计算剩余字数
+      const remainingChars = textarea.value.length;
 
-          // 更新剩余字数显示
-          remainingCharsDisplay.textContent = remainingChars;
-        });
+      // 更新剩余字数显示
+      remainingCharsDisplay.textContent = remainingChars;
+    });
 
-      </script>
+  </script>
 </body>
 
 </html>
